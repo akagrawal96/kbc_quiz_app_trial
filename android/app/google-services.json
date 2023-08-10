@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "772744470992",
+    "project_id": "quizapps-babd5",
+    "storage_bucket": "quizapps-babd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772744470992:android:66b8d682b419753001d9d5",
+        "android_client_info": {
+          "package_name": "com.example.kbc_quiz_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4lqT8otz1JPO8DZQDuW3ENOqTyvOtX8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
