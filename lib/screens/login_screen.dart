@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:kbc_quiz_app/services/auth.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -10,6 +12,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    InternetConnectionChecker().onStatusChange.listen((status) {
+      final connected = status == InternetConnectionStatus.connected;
+      showSimpleNotification(
+          Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+          background: Colors.green);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 12,
             ),
-            SignInButton(Buttons.GoogleDark, onPressed: () async{
+            SignInButton(Buttons.GoogleDark, onPressed: () async {
               await signWithGoogle();
             }),
             // ElevatedButton(
