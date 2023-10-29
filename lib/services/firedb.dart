@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
-
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 class FireDB{
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -11,6 +11,15 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 
     if(await getUser()){
       debugPrint("user already exists");
+      Fluttertoast.showToast(
+          msg: "user already exists",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0
+      );
     }else{
       await FirebaseFirestore.instance
           .collection('users')
@@ -43,9 +52,5 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
     }
 
   }
-
-  
-  
-
 
   } 

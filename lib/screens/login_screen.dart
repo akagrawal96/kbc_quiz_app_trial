@@ -18,9 +18,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
     InternetConnectionChecker().onStatusChange.listen((status) {
       final connected = status == InternetConnectionStatus.connected;
-      showSimpleNotification(
-          Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
-          background: Colors.green);
+      if(connected){
+        showSimpleNotification(
+            const Text("CONNECTED TO INTERNET"), background: Colors.green);
+       /* showSimpleNotification(
+            Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+            background: Colors.green);*/
+      }else{
+            showSimpleNotification(
+            const Text("NO INTERNET"),
+            background: Colors.red);
+            }
+
     });
   }
 

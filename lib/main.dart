@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:kbc_quiz_app/screens/home.dart';
 import 'package:kbc_quiz_app/screens/login_screen.dart';
 import 'package:overlay_support/overlay_support.dart';
 
@@ -28,9 +29,10 @@ class MyApp extends StatelessWidget {
           // or simply save your changes to "hot reload" in a Flutter IDE).
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.purple,
         ),
-        home:const LoginScreen(),
+       // home:const LoginScreen(),
+        home:const Home(),
       ),
     );
   }
